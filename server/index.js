@@ -9,7 +9,11 @@ const PORT = process.env.PORT|| 5000;
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
-app.use(cors());
+app.use(cors({
+  origin:["https://deploy-mern-1whq.vercel.app"],
+  method: ["POST", "GET"],
+  credentials: true
+}));
 
 //created my own '/posts' route for displaying all the posts And in routing.js - router.get('/',getPosts); this will get all the posts and get displayed in the '/allposts' route
 app.use('/posts', postRoutes);
