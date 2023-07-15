@@ -18,6 +18,10 @@ app.use(cors({
 //created my own '/posts' route for displaying all the posts And in routing.js - router.get('/',getPosts); this will get all the posts and get displayed in the '/allposts' route
 app.use('/posts', postRoutes);
 
+app.get('/',(req,res)=>{
+  res.send('App is Running');
+})
+
 //MongoDB Atlas Connection
 const CONNECTION_URL = 'mongodb+srv://Bapun:bapunsahoo@cluster0.lylk42c.mongodb.net/test?retryWrites=true&w=majority';
 
